@@ -197,7 +197,7 @@ volatile uint8_t CtrlTrfData[USB_EP0_BUFF_SIZE] CTRL_TRF_DATA_ADDR_TAG;
 	volatile USB_MSD_CSW msd_csw MSD_CSW_ADDR_TAG;  //Must be located in USB module accessible RAM
 
     #if defined(__18CXX) || defined(__XC8)
-        volatile char msd_buffer[512] @ MSD_BUFFER_ADDRESS;
+        volatile char msd_buffer[512] __at(MSD_BUFFER_ADDRESS);
     #else
         volatile char msd_buffer[512];
 	#endif

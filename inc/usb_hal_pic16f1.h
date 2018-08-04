@@ -183,7 +183,7 @@ please contact mla_licensing@microchip.com
 
 //----- Definitions for BDT address --------------------------------------------
 #define BDT_BASE_ADDR   0x2000
-#define BDT_BASE_ADDR_TAG @ BDT_BASE_ADDR
+#define BDT_BASE_ADDR_TAG __at(BDT_BASE_ADDR)
 #define BDT_ENTRY_SIZE 4
 
 #if (USB_PING_PONG_MODE == USB_PING_PONG__NO_PING_PONG)
@@ -200,8 +200,8 @@ please contact mla_licensing@microchip.com
 #define CTRL_TRF_SETUP_ADDR     BDT_BASE_ADDR + (BDT_ENTRY_SIZE * BDT_NUM_ENTRIES)
 #define CTRL_TRF_DATA_ADDR      CTRL_TRF_SETUP_ADDR + USB_EP0_BUFF_SIZE
 
-#define CTRL_TRF_SETUP_ADDR_TAG @ CTRL_TRF_SETUP_ADDR
-#define CTRL_TRF_DATA_ADDR_TAG  @ CTRL_TRF_DATA_ADDR
+#define CTRL_TRF_SETUP_ADDR_TAG __at(CTRL_TRF_SETUP_ADDR)
+#define CTRL_TRF_DATA_ADDR_TAG  __at(CTRL_TRF_DATA_ADDR)
 
 //----- Deprecated definitions - will be removed at some point of time----------
 //--------- Deprecated in v2.2
