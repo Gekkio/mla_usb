@@ -43,10 +43,6 @@ please contact mla_licensing@microchip.com
 #include "usb_common.h"
 #include "usb_config.h"
 
-#if defined(__XC8)
-    #define __attribute__(a)
-#endif
-
 /** DEFINITIONS ****************************************************/
 
 //USB_HANDLE is a pointer to an entry in the BDT.  This pointer can be used

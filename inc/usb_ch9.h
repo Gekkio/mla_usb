@@ -41,10 +41,6 @@ please contact mla_licensing@microchip.com
 
 #include <stdint.h>
 
-#if defined(__XC8)
-    #define __attribute__(a)
-#endif
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: USB Descriptors
