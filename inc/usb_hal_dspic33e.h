@@ -204,9 +204,9 @@ please contact mla_licensing@microchip.com
 /*****************************************************************************/
 
 // Buffer Descriptor Status Register layout.
-typedef union __attribute__ ((packed)) _BD_STAT
+typedef union _BD_STAT
 {
-    struct __attribute__ ((packed)){
+    __pack struct{
         unsigned            :2;     //Byte count
         unsigned    BSTALL  :1;     //Buffer Stall Enable
         unsigned    DTSEN   :1;     //Data Toggle Synch Enable
@@ -214,14 +214,14 @@ typedef union __attribute__ ((packed)) _BD_STAT
         unsigned    DTS     :1;     //Data Toggle Synch Value
         unsigned    UOWN    :1;     //USB Ownership
     };
-    struct __attribute__ ((packed)){
+    __pack struct{
         unsigned            :2;
         unsigned    PID0    :1;
         unsigned    PID1    :1;
         unsigned    PID2    :1;
         unsigned    PID3    :1;
     };
-    struct __attribute__ ((packed)){
+    __pack struct{
         unsigned            :2;
         unsigned    PID     :4;         //Packet Identifier
     };
@@ -229,18 +229,18 @@ typedef union __attribute__ ((packed)) _BD_STAT
 } BD_STAT;                      //Buffer Descriptor Status Register
 
 // BDT Entry Layout
-typedef union __attribute__ ((packed))__BDT
+typedef union__BDT
 {
     union
     {
-	    struct __attribute__ ((packed))
+	    __pack struct
         {
 	        BD_STAT         STAT;
 	        uint16_t        CNT:10;
 	        uint16_t        ADR;
 	        uint16_t        ADRH;
         };
-	    struct __attribute__ ((packed))
+	    __pack struct
         {
 	        uint32_t       res  :16;
 	        uint32_t       count:10;

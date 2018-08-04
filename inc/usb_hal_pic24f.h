@@ -284,7 +284,7 @@ typedef union __BDT
         struct
         {
             uint8_t CNT;
-            BD_STAT     STAT __attribute__ ((packed));
+            __pack BD_STAT     STAT
         };
         struct
         {

@@ -865,7 +865,7 @@ typedef union _CONTROL_SIGNAL_BITMAP
 /* Functional Descriptor Structure - See CDC Specification 1.1 for details */
 
 /* Header Functional Descriptor */
-typedef struct __attribute__((packed)) _USB_CDC_HEADER_FN_DSC
+typedef __pack struct _USB_CDC_HEADER_FN_DSC
 {
     uint8_t bFNLength;
     uint8_t bDscType;
@@ -874,7 +874,7 @@ typedef struct __attribute__((packed)) _USB_CDC_HEADER_FN_DSC
 } USB_CDC_HEADER_FN_DSC;
 
 /* Abstract Control Management Functional Descriptor */
-typedef struct __attribute__((packed)) _USB_CDC_ACM_FN_DSC
+typedef __pack struct _USB_CDC_ACM_FN_DSC
 {
     uint8_t bFNLength;
     uint8_t bDscType;
@@ -883,7 +883,7 @@ typedef struct __attribute__((packed)) _USB_CDC_ACM_FN_DSC
 } USB_CDC_ACM_FN_DSC;
 
 /* Union Functional Descriptor */
-typedef struct __attribute__((packed)) _USB_CDC_UNION_FN_DSC
+typedef __pack struct _USB_CDC_UNION_FN_DSC
 {
     uint8_t bFNLength;
     uint8_t bDscType;
@@ -893,7 +893,7 @@ typedef struct __attribute__((packed)) _USB_CDC_UNION_FN_DSC
 } USB_CDC_UNION_FN_DSC;
 
 /* Call Management Functional Descriptor */
-typedef struct __attribute__((packed)) _USB_CDC_CALL_MGT_FN_DSC
+typedef __pack struct _USB_CDC_CALL_MGT_FN_DSC
 {
     uint8_t bFNLength;
     uint8_t bDscType;
@@ -902,7 +902,7 @@ typedef struct __attribute__((packed)) _USB_CDC_CALL_MGT_FN_DSC
     uint8_t bDataInterface;
 } USB_CDC_CALL_MGT_FN_DSC;
 
-typedef union __attribute__((packed)) _CDC_NOTICE
+typedef union _CDC_NOTICE
 {
     LINE_CODING GetLineCoding;
     LINE_CODING SetLineCoding;

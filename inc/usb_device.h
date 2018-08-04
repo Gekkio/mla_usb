@@ -1987,9 +1987,9 @@ typedef union
 // Definition of the PIPE structure
 //  This structure is used to keep track of data that is sent out
 //  of the stack automatically.
-typedef struct __attribute__ ((packed))
+typedef __pack struct
 {
-    union __attribute__ ((packed))
+    union
     {
         //Various options of pointers that are available to
         // get the data from
@@ -1998,9 +1998,9 @@ typedef struct __attribute__ ((packed))
         uint16_t *wRam;
         const uint16_t *wRom;
     }pSrc;
-    union __attribute__ ((packed))
+    union
     {
-        struct __attribute__ ((packed))
+        __pack struct
         {
             //is this transfer from RAM or const?
             uint8_t ctrl_trf_mem          :1;
@@ -2018,18 +2018,18 @@ typedef struct __attribute__ ((packed))
 
 extern USB_VOLATILE IN_PIPE inPipes[];
 
-typedef struct __attribute__ ((packed))
+typedef __pack struct
 {
-    union __attribute__ ((packed))
+    union
     {
         //Various options of pointers that are available to
         // get the data from
         uint8_t *bRam;
         uint16_t *wRam;
     }pDst;
-    union __attribute__ ((packed))
+    union
     {
-        struct __attribute__ ((packed))
+        __pack struct
         {
             uint8_t reserved              :7;
             //is this PIPE currently in use

@@ -266,7 +266,7 @@ typedef union
 typedef union
 {
     uint8_t v[2];
-    struct __attribute__((__packed__))
+    __pack struct
     {
         uint8_t LB;
         uint8_t HB;
@@ -415,12 +415,12 @@ typedef union
 } USB_MSD_CMD_SPECIFIC_INFO;
 
 /* Fixed format if Desc bit of request sense cbw is 0 */
-typedef union __attribute__((packed)){
+typedef union{
 	struct
     {
         uint8_t _byte[18];
     };
-	struct __attribute__((packed)){
+	__pack struct{
     	unsigned ResponseCode:7;            // b6-b0 is Response Code Fixed or descriptor format
     	unsigned VALID:1;                    // Set to 1 to indicate information field is a valid value
 

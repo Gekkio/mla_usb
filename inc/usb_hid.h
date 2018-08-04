@@ -26,7 +26,7 @@ please contact mla_licensing@microchip.com
 
 #define USB_HID_CLASS_CODE 0x03
 
-typedef struct __attribute__((packed))
+typedef __pack struct
 {
     uint8_t     bLength;
     uint8_t     bDescriptorType;
@@ -35,20 +35,20 @@ typedef struct __attribute__((packed))
     uint8_t     bNumDescriptors;
 } USB_HID_DESCRIPTOR;
 
-typedef struct __attribute__((packed))
+typedef __pack struct
 {
     uint8_t     bDescriptorType;
     uint16_t    wDescriptorLength;
 } USB_HID_DESCRIPTOR_SUBORDINATE;
 
-typedef struct __attribute__((packed))
+typedef __pack struct
 {
     unsigned    bSize :2;
     unsigned    bType :2;
     unsigned    bTag  :4;
 } USB_HID_REPORT_ITEM_HEADER_SHORT;
 
-typedef struct __attribute__((packed))
+typedef __pack struct
 {
     unsigned    bSize :2;
     unsigned    bType :2;

@@ -149,7 +149,7 @@ Currently this must be set to 1, due to limitations in the USB Host layer.
 This is the structure of the Command Block Wrapper, required at the beginning of
 each mass storage transfer.
 */
-typedef struct __attribute__((packed)) _USB_MSD_CBW
+typedef __pack struct _USB_MSD_CBW
 {
     uint32_t       dCBWSignature;              // Signature, must be a specific constant.
     uint32_t       dCBWTag;                    // Transaction tag. Value in the CSW must match.
@@ -174,7 +174,7 @@ typedef struct __attribute__((packed)) _USB_MSD_CBW
 This is the structure of the Command Status Wrapper, required at the end of
 each mass storage transfer.
 */
-typedef struct __attribute__((packed)) _USB_MSD_CSW
+typedef __pack struct _USB_MSD_CSW
 {
     uint32_t   dCSWSignature;                  // Signature, must be a specific constant.
     uint32_t   dCSWTag;                        // Transaction tag. Must match the CBW.
@@ -188,7 +188,7 @@ This structure is used to hold all the information about an attached Mass Storag
 */
 typedef struct _USB_MSD_DEVICE_INFO
 {
-    union __attribute__((packed)) {
+    union {
         uint8_t                            data[31];          // Data buffer for device communication.
         USB_MSD_CBW                     cbw;
         USB_MSD_CSW                     csw;

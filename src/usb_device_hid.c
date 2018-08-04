@@ -56,7 +56,7 @@ please contact mla_licensing@microchip.com
 // Section: File Scope Data Types
 // *****************************************************************************
 // *****************************************************************************
-typedef struct __attribute__((packed))
+typedef __pack struct
 {
     unsigned :8;
     unsigned :8;
@@ -64,7 +64,7 @@ typedef struct __attribute__((packed))
     uint8_t duration;
 } USB_SETUP_SET_IDLE_RATE;
 
-typedef struct __attribute__((packed))
+typedef __pack struct
 {
     unsigned :8;
     unsigned :8;
