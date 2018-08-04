@@ -212,7 +212,7 @@ USB_CDC_LINE_CODING           CDC_DEV_LINE_CODING_Buffer; // Stores LINE CODING 
 USB_CDC_LINE_CODING           CDC_LINE_CODING_Buffer;     // Stores LINE CODING data configured at host
 USB_CDC_CONTROL_SIGNAL_BITMAP CDC_CONTROL_SIGNAL_Buffer;  // Stores CONTROL SIGNAL data configured at host
 
-USB_CDC_DEVICE_INFO           deviceInfoCDC[USB_MAX_CDC_DEVICES] __attribute__ ((aligned)); // This structure holds all the information of device collected during enumeration
+USB_CDC_DEVICE_INFO           deviceInfoCDC[USB_MAX_CDC_DEVICES]; // This structure holds all the information of device collected during enumeration
 
 uint8_t CDCdeviceAddress = 0; // Holds address of the attached device
 

@@ -73,7 +73,7 @@ please contact mla_licensing@microchip.com
 // Section: CDC Host External Variables
 //******************************************************************************
 //******************************************************************************
-extern USB_CDC_DEVICE_INFO                  deviceInfoCDC[] __attribute__ ((aligned));
+extern USB_CDC_DEVICE_INFO                  deviceInfoCDC[];
 extern uint8_t CDCdeviceAddress ;
 
 //******************************************************************************

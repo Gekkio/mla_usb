@@ -230,7 +230,7 @@ please contact mla_licensing@microchip.com
 #define EP_CTRL                         0x0C
 
 
-#define BDT_BASE_ADDR_TAG   __attribute__ ((aligned (512)))
+#define BDT_BASE_ADDR_TAG   __align(512)
 #define CTRL_TRF_SETUP_ADDR_TAG
 #define CTRL_TRF_DATA_ADDR_TAG
 

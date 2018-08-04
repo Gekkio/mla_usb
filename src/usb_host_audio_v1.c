@@ -192,7 +192,7 @@ typedef struct _USB_AUDIO_DEVICE_INFO
 //******************************************************************************
 //******************************************************************************
 
-static USB_AUDIO_DEVICE_INFO         deviceInfoAudioV1[USB_MAX_AUDIO_DEVICES] __attribute__ ((aligned));
+static USB_AUDIO_DEVICE_INFO         deviceInfoAudioV1[USB_MAX_AUDIO_DEVICES];
 
 
 // *****************************************************************************

@@ -86,20 +86,20 @@ please contact mla_licensing@microchip.com
 
 #if (USB_PING_PONG_MODE == USB_PING_PONG__NO_PING_PONG) || (USB_PING_PONG_MODE == USB_PING_PONG__ALL_BUT_EP0)
     #if !defined(USB_SUPPORT_OTG) && !defined(USB_SUPPORT_DEVICE)
-    static BDT_ENTRY __attribute__ ((aligned(512)))    BDT[2];
+    static BDT_ENTRY __align(512)    BDT[2];
     #endif
     #define BDT_IN                                  (&BDT[0])           // EP0 IN Buffer Descriptor
     #define BDT_OUT                                 (&BDT[1])           // EP0 OUT Buffer Descriptor
 #elif (USB_PING_PONG_MODE == USB_PING_PONG__EP0_OUT_ONLY)
     #if !defined(USB_SUPPORT_OTG) && !defined(USB_SUPPORT_DEVICE)
-    static BDT_ENTRY __attribute__ ((aligned(512)))    BDT[3];
+    static BDT_ENTRY __align(512)    BDT[3];
     #endif
     #define BDT_IN                                  (&BDT[0])           // EP0 IN Buffer Descriptor
     #define BDT_OUT                                 (&BDT[1])           // EP0 OUT Even Buffer Descriptor
     #define BDT_OUT_ODD                             (&BDT[2])           // EP0 OUT Odd Buffer Descriptor
 #elif (USB_PING_PONG_MODE == USB_PING_PONG__FULL_PING_PONG)
     #if !defined(USB_SUPPORT_OTG) && !defined(USB_SUPPORT_DEVICE)
-    static BDT_ENTRY __attribute__ ((aligned(512)))    BDT[4];
+    static BDT_ENTRY __align(512)    BDT[4];
     #endif
     #define BDT_IN                                  (&BDT[0])           // EP0 IN Even Buffer Descriptor
     #define BDT_IN_ODD                              (&BDT[1])           // EP0 IN Odd Buffer Descriptor
@@ -108,7 +108,7 @@ please contact mla_licensing@microchip.com
 #endif
 
 #if defined(USB_SUPPORT_OTG) || defined(USB_SUPPORT_DEVICE)
-    extern BDT_ENTRY BDT[] __attribute__ ((aligned (512)));
+    extern BDT_ENTRY BDT[] __align(512);
 #endif
 
 // These should all be moved into the USB_DEVICE_INFO structure.

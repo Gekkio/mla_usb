@@ -2013,7 +2013,7 @@ typedef __pack struct
         }bits;
         uint8_t Val;
     }info;
-    uint16_t_VAL __attribute__((aligned)) wCount;
+    uint16_t_VAL wCount;
 }IN_PIPE;
 
 extern USB_VOLATILE IN_PIPE inPipes[];

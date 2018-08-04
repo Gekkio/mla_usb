@@ -279,7 +279,7 @@ extern CLIENT_DRIVER_TABLE usbMediaInterfaceTable;  // This table contains the i
 //******************************************************************************
 
 static uint32_t                       dCBWTagNext     = 0x12345678ul;
-static USB_MSD_DEVICE_INFO         deviceInfoMSD[USB_MAX_MASS_STORAGE_DEVICES] __attribute__ ((aligned));
+static USB_MSD_DEVICE_INFO         deviceInfoMSD[USB_MAX_MASS_STORAGE_DEVICES];
 
 
 // *****************************************************************************

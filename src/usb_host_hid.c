@@ -238,7 +238,7 @@ static void _USBHostHID_ResetStateJump( uint8_t i );
 //******************************************************************************
 //******************************************************************************
 
-static USB_HID_DEVICE_INFO          deviceInfoHID[USB_MAX_HID_DEVICES] __attribute__ ((aligned));
+static USB_HID_DEVICE_INFO          deviceInfoHID[USB_MAX_HID_DEVICES];
 static USB_HID_INTERFACE_DETAILS*   pInterfaceDetails = NULL;
 static USB_HID_INTERFACE_DETAILS*   pCurrInterfaceDetails = NULL;
 
