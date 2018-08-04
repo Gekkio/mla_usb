@@ -738,7 +738,7 @@ void putsUSBUSART(char *data);
 
 /**************************************************************************
   Function:
-        void putrsUSBUSART(const const char *data)
+        void putrsUSBUSART(const char *data)
 
   Summary:
     putrsUSBUSART writes a string of data to the USB including the null
@@ -771,12 +771,12 @@ void putsUSBUSART(char *data);
     255 BYTEs.
 
   Input:
-    const const char *data -  null\-terminated string of constant data. If a
-                            null character is not found, 255 BYTEs of data
-                            will be transferred to the host.
+    const char *data -  null\-terminated string of constant data. If a
+                      null character is not found, 255 BYTEs of data
+                      will be transferred to the host.
 
   **************************************************************************/
-void putrsUSBUSART(const const char *data);
+void putrsUSBUSART(const char *data);
 
 /************************************************************************
   Function:
@@ -966,7 +966,7 @@ extern const uint8_t configDescriptor1[];
 //uint8_t getsUSBUSART(char *buffer, uint8_t len);
 //void putUSBUSART(char *data, uint8_t Length);
 //void putsUSBUSART(char *data);
-//void putrsUSBUSART(const const char *data);
+//void putrsUSBUSART(const char *data);
 //void CDCTxService(void);
 //void CDCNotificationHandler(void);
 //------------------------------------------------------------------------------
