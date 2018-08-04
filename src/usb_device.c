@@ -2014,7 +2014,7 @@ static void USBStdSetCfgHandler(void)
     else
     {
         //initialize the required endpoints
-        USB_SET_CONFIGURATION_HANDLER(EVENT_CONFIGURED,(void*)&USBActiveConfiguration,1);
+        USB_SET_CONFIGURATION_HANDLER((USB_EVENT) EVENT_CONFIGURED,(void*)&USBActiveConfiguration,1);
 
         //Otherwise go to the configured state.  Update the state variable last,
         //after performing all of the set configuration related initialization
@@ -2498,7 +2498,7 @@ static void USBCtrlTrfSetupHandler(void)
     //2. Now find out what was in the SETUP packet, and begin handling the request.
     //--------------------------------------------------------------------------
     USBCheckStdRequest();                                               //Check for standard USB "Chapter 9" requests.
-    USB_NONSTANDARD_EP0_REQUEST_HANDLER(EVENT_EP0_REQUEST,0,0); //Check for USB device class specific requests
+    USB_NONSTANDARD_EP0_REQUEST_HANDLER((USB_EVENT) EVENT_EP0_REQUEST,0,0); //Check for USB device class specific requests
 
 
     //--------------------------------------------------------------------------
@@ -2724,7 +2724,7 @@ static void USBCheckStdRequest(void)
             USBAlternateInterface[SetupPkt.bIntfID] = SetupPkt.bAltID;
             break;
         case USB_REQUEST_SET_DESCRIPTOR:
-            USB_SET_DESCRIPTOR_HANDLER(EVENT_SET_DESCRIPTOR,0,0);
+            USB_SET_DESCRIPTOR_HANDLER((USB_EVENT) EVENT_SET_DESCRIPTOR,0,0);
             break;
         case USB_REQUEST_SYNCH_FRAME:
         default:
@@ -2887,7 +2887,7 @@ static void USBStdFeatureReqHandler(void)
                     //the application firmware uses USBTransferOnePacket() on the EP.
                     p->STAT.Val &= (~_USIE);    //Clear UOWN bit
                     p->STAT.Val |= _DAT1;       //Set DTS to DATA1
-                    USB_TRANSFER_TERMINATED_HANDLER(EVENT_TRANSFER_TERMINATED,p,sizeof(p));
+                    USB_TRANSFER_TERMINATED_HANDLER((USB_EVENT) EVENT_TRANSFER_TERMINATED,p,sizeof(p));
                 }
                 else
                 {
@@ -2917,7 +2917,7 @@ static void USBStdFeatureReqHandler(void)
                     p->STAT.Val &= ~(_USIE | _DAT1 | _BSTALL);
                     //Call the application event handler callback function, so it can
 					//decide if the endpoint should get re-armed again or not.
-                    USB_TRANSFER_TERMINATED_HANDLER(EVENT_TRANSFER_TERMINATED,p,sizeof(p));
+                    USB_TRANSFER_TERMINATED_HANDLER((USB_EVENT) EVENT_TRANSFER_TERMINATED,p,sizeof(p));
                 }
                 else
                 {
